@@ -77,7 +77,7 @@ class LinearRegression:
       "must fit before predict"
     assert X_predict.shape[1] == len(self.coef_), \
       "the feature number of X_predict must be equal to X_train"
-    X_b = np.hstack([np.ones(len(X_predict, 1)), X_predict])
+    X_b = np.hstack([np.ones((len(X_predict), 1)), X_predict])
     return X_b.dot(self._theta)
   
   def score(self, X_test, y_test):
